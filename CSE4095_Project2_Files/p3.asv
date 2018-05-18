@@ -1,0 +1,23 @@
+%{
+(10 points) Combine DIC(gray), Calcein(green), AC(red) image and show it.
+b. (10 points) Combine DIC(gray), Calcein(green), AC(red), and TRAP(yellow) image
+and show it.
+c. (10 points) Combine DIC(gray), Calcein(green), AC(red), TRAP(yellow), and
+AP(orange) image and show it.
+d. (30 points) Repeat 3a-3c with the segmented images found in step 2c.
+%}
+
+[x, y, z] = size(DIC);
+gray_DIC = zeros(x, y, z);
+gray_DIC(:,:,1) = rgb2gray(DIC);
+gray_DIC(:,:,2) = rgb2gray(DIC);
+gray_DIC(:,:,3) = rgb2gray(DIC);
+
+green_Calcein = zeros(x, y, z);
+green_Calcein(:,:,2) = Calcein(:,:,2);
+
+red_AC = zeros(x, y, z);
+red_AC(:,:,1) = AC(:,:,1);
+
+TRAP_resize = zeros(x, y, z);
+TRAP_resize(:,:,1) = 
